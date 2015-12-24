@@ -1,5 +1,9 @@
 # xmlovely
 
+[![Version](http://img.shields.io/npm/v/xmlovely.svg?style=flat-square)](https://www.npmjs.org/package/xmlovely)
+[![Build Status](http://img.shields.io/travis/mcous/xmlovely.svg?style=flat-square)](https://travis-ci.org/mcous/xmlovely) [![Coverage](http://img.shields.io/coveralls/mcous/xmlovely.svg?style=flat-square)](https://coveralls.io/r/mcous/xmlovely)  [![Dependencies](http://img.shields.io/david/mcous/xmlovely?style=flat-square)](https://david-dm.org/mcous/xmlovely)
+[![DevDependencies](http://img.shields.io/david/dev/mcous/xmlovely.svg?style=flat-square)](https://david-dm.org/mcous/xmlovely#info=devDependencies)
+
 Transform stream to pretty print a compact XML stream
 
 ## usage
