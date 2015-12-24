@@ -6,7 +6,7 @@ var inherits = require('inherits')
 var Transform = require('readable-stream').Transform
 var repeat = require('lodash.repeat')
 var reduce = require('lodash.reduce')
-var isFinite = require('lodash.isFinite')
+var isFinite = require('lodash.isfinite')
 
 var EOL = require('os').EOL
 var OPEN = '<'
