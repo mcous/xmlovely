@@ -1,6 +1,6 @@
 {
   "name": "xmlovely",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A compact XML to pretty-printed XML Node transform stream",
   "main": "index.js",
   "scripts": {
