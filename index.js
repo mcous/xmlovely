@@ -36,62 +36,62 @@ PrettyPrinter.prototype._indent = function() {
 
 PrettyPrinter.prototype._transform = function(chunk, encoding, done) {
   var stringChunk = this._decoder.write(chunk)
-
+  var _this = this
   var newChunk = reduce(stringChunk, function(result, char, index) {
-    this._index += index
+    _this._index += index
 
-    if (!this._attribute || (char === ATTRIBUTE)) {
-      if (this._newLevel) {
-        this._newLevel = false
+    if (!_this._attribute || (char === ATTRIBUTE)) {
+      if (_this._newLevel) {
+        _this._newLevel = false
 
-        if (!this._closingNode) {
-          this._level++
+        if (!_this._closingNode) {
+          _this._level++
         }
-        this._closingNode = false
+        _this._closingNode = false
 
         if (char === OPEN) {
-          this._lookingForNodeEnd = true
+          _this._lookingForNodeEnd = true
           return result
         }
 
-        return result + this._indent() + char
+        return result + _this._indent() + char
       }
 
-      if (this._lookingForNodeEnd) {
-        this._lookingForNodeEnd = false
+      if (_this._lookingForNodeEnd) {
+        _this._lookingForNodeEnd = false
 
         if (char === END) {
-          this._closingNode = true
-          this._level--
+          _this._closingNode = true
+          _this._level--
         }
 
-        return result + this._indent() + OPEN + char
+        return result + _this._indent() + OPEN + char
       }
 
       if (char === OPEN) {
-        if (this._index) {
+        if (_this._index) {
           result += EOL
         }
 
-        this._lookingForNodeEnd = true
+        _this._lookingForNodeEnd = true
         return result
       }
 
       if (char === CLOSE) {
-        this._newLevel = true
+        _this._newLevel = true
         return result + char + EOL
       }
 
       if (char === END) {
-        this._level--
+        _this._level--
       }
       else if (char === ATTRIBUTE) {
-        this._attribute = !this._attribute
+        _this._attribute = !_this._attribute
       }
     }
 
     return result + char
-  }, '', this)
+  }, '')
 
   this.push(newChunk)
   done()
